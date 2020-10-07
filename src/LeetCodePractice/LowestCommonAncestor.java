@@ -2,7 +2,7 @@ package LeetCodePractice;
 
 public class LowestCommonAncestor {
 
-    void lowestCommonAncestor(TreeNode node,TreeNode p, TreeNode q){
+    void lowestCommonAncestor(TreeNode node, TreeNode p, TreeNode q) {
 
 
         /*if(root != null){
@@ -16,6 +16,7 @@ public class LowestCommonAncestor {
 
         }
         return root;*/
+
 
 
     }

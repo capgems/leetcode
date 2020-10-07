@@ -18,7 +18,7 @@ public class MostFrequentNumberRepeated {
         int[] array4 = {0};
         // mostFrequent(array5) should return -1.
         int[] array5 = {0, -1, 10, 10, -1, 10, -1, -1, -1, 1};
-        System.out.println(mostRepeatedNumber(array1, new HashMap<Integer, Integer>(), 0, Integer.MIN_VALUE,0));
+        System.out.println(mostRepeatedNumber(array5, new HashMap<Integer, Integer>(), 0, Integer.MIN_VALUE, 0));
 
 //        System.out.println(computeTheMostCalculatedNumber(array5, 0, new HashMap<>(), -1));
 //        System.out.println(computeTheMostCalculatedNumber(array1, 0, new HashMap<>(), -1));
@@ -28,7 +28,7 @@ public class MostFrequentNumberRepeated {
     }
 
 
-    static Integer computeTheMostCalculatedNumber(int arr[], int index, Map<Integer, Integer> map, int maxCount) {
+   /* static Integer computeTheMostCalculatedNumber(int arr[], int index, Map<Integer, Integer> map, int maxCount) {
 
         if (arr.length == 0) {
             return null;
@@ -52,25 +52,27 @@ public class MostFrequentNumberRepeated {
 
 
         //  return maxOfNumbers(map.values().stream().mapToInt(Integer::intValue).toArray(), 0, Integer.MIN_VALUE);
-    }
+    }*/
 
 
-    static Integer mostRepeatedNumber(int[] array, Map<Integer, Integer> map, int key, int max, int maxNumber) {
+    static Integer mostRepeatedNumber(int[] array, Map<Integer, Integer> map, int key, int maxCount, int maxNumber) {
 
-        if (key >= array.length) return maxNumber;
 
-        if (map.containsKey(array[key])) {
-            map.put(array[key], map.get(array[key]) + 1);
-        } else {
+        if (array.length == 0 || key >= array.length) return maxNumber;
+
+        if (!map.containsKey(array[key])) {
             map.put(array[key], 1);
+
+        } else {
+            map.put(array[key], map.get(array[key]) + 1);
         }
 
-        max = Math.max(map.get(array[key]), max);
-        if(map.get(array[key]) >= max){
-            maxNumber =array[key];
-        }
+        maxCount = Math.max(map.get(array[key]), maxCount);
 
-        return mostRepeatedNumber(array, map, key + 1, max,maxNumber);
+        if (maxCount == map.get(array[key])) {
+            maxNumber = array[key];
+        }
+        return mostRepeatedNumber(array, map, key + 1, maxCount, maxNumber);
     }
 
 }

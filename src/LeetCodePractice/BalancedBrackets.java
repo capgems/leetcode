@@ -5,7 +5,7 @@ import java.util.Stack;
 public class BalancedBrackets {
 
     public static void main(String[] args) {
-        String characters = "[][][][](){{}}(({{}}))";
+        String characters = "({{()}})";
         System.out.println(checkBrackets(characters));
     }
 

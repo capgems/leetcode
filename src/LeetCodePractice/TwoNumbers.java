@@ -10,8 +10,8 @@ public class TwoNumbers {
 
     static int[] twoNumbersTargetProblem(int arr[], int target) {
 
-        for (int i = 0; i < arr.length; i++){
-            int remain  = target - arr[i], j = i+1;
+        for (int i = 0; i < arr.length; i++) {
+            int remain = target - arr[i], j = i + 1;
             while (j > 0 && j < arr.length) {
                 if (arr[j] == remain) {
                     return new int[]{i, j};

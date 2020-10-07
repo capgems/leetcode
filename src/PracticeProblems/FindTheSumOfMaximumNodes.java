@@ -21,7 +21,7 @@ public class FindTheSumOfMaximumNodes {
             return maxSum;
         }
 
-       return Math.max(maximumSumOfNodes(node.left,len+1,sum+node.data),maximumSumOfNodes(node.right,len+1,sum+node.data));
+       return Math.max(maximumSumOfNodes(node.left,len+1,sum+node.data), maximumSumOfNodes(node.right,len+1,sum+node.data));
     }
 
     public static void main(String[] args) {
